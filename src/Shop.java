@@ -29,8 +29,10 @@ public class Shop
 
             for (Item item : cart)
             {
-                System.out.println(String.format("%s\t\t$2.99\t        %d\t\t      %f", item.getName(), item.getQuantity(), item.getPrice()));
+                System.out.println(String.format("%s\t\t        $%.2f      %d\t\t   $%.2f", item.getName(), item.getPrice(), item.getQuantity(), item.getPrice() * item.getQuantity()));
             }
+
+
 
             System.out.print("Continue shopping (y/n)? ");
             keepShopping = scan.next();

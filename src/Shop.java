@@ -39,10 +39,12 @@ public class Shop
             fTotal = fSubTotal + fTax;
 
             System.out.println("***************************************************");
-            System.out.println(String.format("Subtotal\t\t\t\t      $%.2f", fSubTotal));
-            System.out.println(String.format("Tax\t\t\t\t\t      $%.2f", fTax));
-            System.out.println(String.format("Total\t\t\t\t\t      $%.2f", fTotal));
+            System.out.println(String.format("Subtotal\t\t\t\t\t\t       $%.2f", fSubTotal));
+            System.out.println(String.format("Tax\t\t\t\t\t\t\t\t       $%.2f", fTax));
+            System.out.println(String.format("Total\t\t\t\t\t\t\t       $%.2f", fTotal));
             System.out.println("==============================================");
+
+
 
             System.out.print("Continue shopping (y/n)? ");
             keepShopping = scan.next();

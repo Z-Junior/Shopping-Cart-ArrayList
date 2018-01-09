@@ -1,27 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Shop
 {
-    public static void main (String[] args)
+    public static void main(String[] args)
     {
-//declare and instantiate a variable cart to be an empty ArrayList
-        Item item;
+        ArrayList<Item> cart = new ArrayList<>();
         String itemName;
         double itemPrice;
         int quantity;
         String keepShopping = "y";
         Scanner scan = new Scanner(System.in);
+
         while (keepShopping.equals("y"))
         {
-            System.out.print ("Enter the name of the item: ");
+            System.out.print("Enter the name of the item: ");
             itemName = scan.next();
-            System.out.print ("Enter the unit price: ");
+            System.out.print("Enter the unit price: ");
             itemPrice = scan.nextDouble();
-            System.out.print ("Enter the quantity: ");
+            System.out.print("Enter the quantity: ");
             quantity = scan.nextInt();
-            // *** create a new item and add it to the cart
-            // *** print the contents of the cart object using println
-            System.out.print ("Continue shopping (y/n)? ");
+
+            cart.add(new Item(itemName, itemPrice, quantity));
+
+            System.out.println("==================== Your Cart ==================");
+            System.out.println("Item    \t\tPrice\t   Quantity\t   Item Total");
+            System.out.println("***************************************************");
+
+            for (Item item : cart)
+            {
+                System.out.println(String.format("%s\t\t$2.99\t        %d\t\t      %f", item.getName(), item.getQuantity(), item.getPrice()));
+            }
+
+            System.out.print("Continue shopping (y/n)? ");
             keepShopping = scan.next();
         }
     }
